@@ -6,7 +6,6 @@
 
     let tasks = [];
 
-    // Завантаження з localStorage
     window.onload = () => {
       const stored = localStorage.getItem('tasks');
       if (stored) {
@@ -15,12 +14,10 @@
       }
     };
 
-    // Збереження в localStorage
     function saveTasks() {
       localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 
-    // Рендеринг завдань
     function renderTasks() {
       taskList.innerHTML = '';
       tasks.forEach((task, index) => {
@@ -63,7 +60,6 @@
       });
     }
 
-    // Додавання нового завдання
     addBtn.addEventListener('click', () => {
       const text = taskInput.value.trim();
       if (text !== '') {
